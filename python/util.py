@@ -1,6 +1,3 @@
-# Copyright (c) 2025 Digital Asset (Switzerland) GmbH and/or its
-# affiliates. All rights reserved.
-#
 # Copyright 2025 Digital Asset (Switzerland) GmbH and/or its affiliates
 # SPDX-License-Identifier: BSD0
 
