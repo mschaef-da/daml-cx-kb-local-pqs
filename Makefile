@@ -74,16 +74,10 @@ target/_gen/.gen: .venv .protobufs
 
 	touch target/_gen/.gen
 
-.PHONY: start-ledger
-start-ledger: target/canton.pid                     ## Start a locally running sandbox ledger
+.PHONY: run
+run: target/_gen/.gen ${asset_model_dar} target/scribe.jar  ## Start a locally running sandbox ledger and PQS instance
+	asset_model_dar=${asset_model_dar} .venv/bin/honcho start
 
-target/canton.pid: test-daml .damlsdk
-	scripts/start-ledger.sh ${asset_model_dar}
-
-.PHONY: start-ledger
-stop-ledger:                                        ## Stop the locally running sandbox ledger
-	scripts/stop-ledger.sh
-
-.PHONY: run-scribe
-run-scribe: target/scribe.jar target/canton.pid     ## Run scribe against local PGSQL
-	scripts/run-scribe.sh
+.PHONY: drop-pqs-db
+drop-pqs-db:                                       ## Drop the local PQS database
+	scripts/drop-pqs-db.sh

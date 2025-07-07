@@ -1,3 +1,2 @@
-backend: scripts/run-backend.sh
-json-api: scripts/run-json-api.sh
-frontend: scripts/run-frontend.sh
+ledger: scripts/run-ledger.sh ${asset_model_dar}
+scribe: sleep 30 && scripts/run-scribe.sh
