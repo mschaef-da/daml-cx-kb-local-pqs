@@ -12,6 +12,13 @@ This code is presented as an example only, with no guarantees made
 about fitness or suitablity for any purpose. See the license text
 below for more details.
 
+## Note on Daml 2
+
+This version of the demo is written to use Daml 3.x. If you would like
+to run a local PQS in a Daml 2.10.x scenario, please check out the
+[`daml-2`](https://github.com/mschaef-da/daml-cx-kb-local-pqs/tree/daml-2)
+branch, which will operate similarly.
+
 ## Setting up Your Development Environment and Building the Project
 
 1. Install the following dependencies:
