@@ -28,7 +28,7 @@ format-python: .venv                                ## Automatically reformat th
 	black python/*.py
 
 .PHONY: clean
-clean: stop-ledger                                  ## Reset the build to a clean state without any build targets
+clean:                                              ## Reset the build to a clean state without any build targets
 	(cd asset-model && daml clean)
 	rm -fr .damlsdk .protobufs target
 	rm -fr python/__pycache__
@@ -75,7 +75,7 @@ target/_gen/.gen: .venv .protobufs
 	touch target/_gen/.gen
 
 .PHONY: run
-run: target/_gen/.gen ${asset_model_dar} target/scribe.jar  ## Start a locally running sandbox ledger and PQS instance
+run: build                                        ## Start a locally running sandbox ledger and PQS instance
 	asset_model_dar=${asset_model_dar} .venv/bin/honcho start
 
 .PHONY: drop-pqs-db
